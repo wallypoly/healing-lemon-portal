@@ -518,7 +518,7 @@ h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.02em}
 .hl-hero h1{font-size:clamp(30px,4.3vw,49px);color:#124A7A;margin-top:18px;line-height:1.14}
 .hl-hero p{font-size:15px;color:#4D7190;max-width:46ch;margin:14px 0 0}
 .hl-hand{font-weight:750;color:#2188F5;transform:rotate(-2deg);display:inline-block;margin-top:18px;border-bottom:3px solid #FFE45E;padding-bottom:3px}
-.hl-mascot{position:absolute;right:7%;bottom:-4px;width:min(31%,330px);z-index:4;filter:drop-shadow(0 20px 20px rgba(35,104,155,.16))}
+.hl-mascot{position:absolute;right:7%;bottom:-4px;width:min(31%,280px);z-index:4;filter:drop-shadow(0 20px 20px rgba(35,104,155,.16))}
 .hl-sun{position:absolute;width:180px;height:180px;border-radius:50%;right:23%;top:-80px;background:#FFE45E;opacity:.4}
 .hl-platform-sign{position:absolute;right:3.2%;top:28px;z-index:3;background:#1769AF;color:#fff;border:5px solid #fff;border-radius:10px;padding:11px 18px;font-weight:800;box-shadow:var(--shadow-md)}
 .hl-platform-sign small{display:block;font-size:9px;letter-spacing:.18em;opacity:.78;text-align:center}
@@ -570,7 +570,7 @@ tr:hover td{background:#F8FCFF}
   position:relative;overflow:hidden;
   background:linear-gradient(145deg,#DDF3FF 0%,#BDE5FF 50%,#FFF5A4 100%);color:var(--ink);padding:48px;
 }
-.auth-visual::before{content:"";position:absolute;inset:auto -8% -12% 30%;height:65%;background:url('/assets/ip/ningmon.svg') right bottom/contain no-repeat;filter:drop-shadow(0 22px 18px rgba(21,89,145,.16))}
+.auth-visual::before{content:"";position:absolute;inset:auto -8% -12% 30%;height:65%;background:url('/assets/ip/ningmon.webp') right bottom/contain no-repeat;filter:drop-shadow(0 22px 18px rgba(21,89,145,.16))}
 .auth-visual>*{position:relative;z-index:2}
 .auth-visual .brand-mark{color:var(--ink)!important}
 .auth-visual h1{color:#114D7C!important}

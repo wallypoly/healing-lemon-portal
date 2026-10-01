@@ -64,7 +64,9 @@ Firebase Hosting
 
 Ning-Mon 素材来自项目提供的角色四视图，已拆成：
 
-- `public/assets/ip/ningmon.svg`
+- `public/assets/ip/ningmon.webp`
+
+> GitHub 只保存网站运行需要的 Ning-Mon 优化图，完整角色四视图保留在品牌资产库，避免把高分辨率 IP 素材暴露在公开仓库。
 
 ## 第一次接 Firebase
 
