@@ -3,7 +3,7 @@ name: Materialize Healing Lemon Portal
 on:
   push:
     paths:
-      - ".sync2/READY"
+      - ".sync3/READY"
 
 permissions:
   contents: write
@@ -18,28 +18,21 @@ jobs:
       - name: Materialize staged portal payload
         shell: bash
         run: |
-          if [ ! -f .sync2/READY ]; then
-            echo "No READY marker; nothing to materialize."
-            exit 0
-          fi
-          cat .sync2/part-* | base64 -d > /tmp/healing-lemon-portal.tgz
+          test -f .sync3/READY
+          cat .sync3/part-* | base64 -d > /tmp/healing-lemon-portal.tgz
           tar -xzf /tmp/healing-lemon-portal.tgz -C .
-          rm -rf .sync2 .sync-payload
-      - name: Verify architecture
+          rm -rf .sync3 .sync2 .sync-payload
+          rm -f .github/workflows/materialize-portal.yml
+      - name: Verify portal
         shell: bash
         run: |
-          if [ -f package.json ]; then
-            npm test
-          fi
+          npm test
+          npm run check
       - name: Commit materialized portal
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-          git commit -m "feat: materialize Healing Lemon Portal v2"
+          git commit -m "feat: publish Healing Lemon Portal v2"
           git push
