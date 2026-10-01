@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 580" role="img" aria-labelledby="title desc">
+  <title id="title">Ning-Mon</title>
+  <desc id="desc">Healing Lemon mascot, a cheerful lemon character wearing a clear blue scarf.</desc>
+  <defs>
+    <radialGradient id="body" cx="36%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#FFF59A"/>
+      <stop offset=".45" stop-color="#FFE45E"/>
+      <stop offset="1" stop-color="#F8C92E"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#78C850"/>
+      <stop offset="1" stop-color="#2C8B46"/>
+    </linearGradient>
+    <linearGradient id="scarf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38A5FF"/>
+      <stop offset="1" stop-color="#1677E8"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#155991" flood-opacity=".18"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <ellipse cx="259" cy="535" rx="150" ry="28" fill="#1668B8" opacity=".12" filter="url(#soft)"/>
+  <g filter="url(#shadow)">
+    <path d="M250 68 C250 39 266 17 288 12 C309 8 320 23 312 42 C306 57 287 67 268 75Z" fill="#F8C92E"/>
+    <path d="M250 69 C204 24 140 30 112 63 C150 84 199 94 246 83 C256 81 259 76 250 69Z" fill="url(#leaf)"/>
+    <path d="M244 67 C208 57 166 58 127 67" fill="none" stroke="#B9E792" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+    <path d="M265 72 C301 36 360 37 397 69 C365 95 319 103 274 91 C261 88 257 81 265 72Z" fill="url(#leaf)"/>
+    <path d="M281 79 C319 66 354 67 385 74" fill="none" stroke="#B9E792" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+    <path d="M260 78 C372 78 429 180 420 298 C412 414 357 494 260 498 C161 494 106 416 98 300 C90 182 147 78 260 78Z" fill="url(#body)" stroke="#F7C72C" stroke-width="5"/>
+    <ellipse cx="184" cy="215" rx="43" ry="52" fill="#6A341B"/>
+    <ellipse cx="336" cy="215" rx="43" ry="52" fill="#6A341B"/>
+    <ellipse cx="171" cy="197" rx="17" ry="20" fill="white" opacity=".95"/>
+    <ellipse cx="323" cy="197" rx="17" ry="20" fill="white" opacity=".95"/>
+    <ellipse cx="196" cy="232" rx="10" ry="12" fill="#A86537" opacity=".65"/>
+    <ellipse cx="348" cy="232" rx="10" ry="12" fill="#A86537" opacity=".65"/>
+    <path d="M162 157 Q175 144 190 154" fill="none" stroke="#B87324" stroke-width="8" stroke-linecap="round"/>
+    <path d="M330 154 Q345 144 359 158" fill="none" stroke="#B87324" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="147" cy="274" rx="35" ry="18" fill="#FF9F9E" opacity=".42"/>
+    <ellipse cx="373" cy="274" rx="35" ry="18" fill="#FF9F9E" opacity=".42"/>
+    <path d="M210 265 Q260 318 310 265 Q303 345 260 347 Q217 345 210 265Z" fill="#8C2F26"/>
+    <path d="M226 314 Q260 293 294 314 Q285 337 260 338 Q236 337 226 314Z" fill="#FF7E78"/>
+    <path d="M117 342 C80 331 55 352 65 383 C74 411 112 418 140 392" fill="url(#body)" stroke="#F7C72C" stroke-width="5"/>
+    <path d="M401 342 C438 330 464 352 454 383 C445 411 407 418 379 392" fill="url(#body)" stroke="#F7C72C" stroke-width="5"/>
+    <path d="M119 332 C173 357 347 357 401 332 C403 368 386 405 359 422 C302 442 218 442 160 422 C133 404 116 368 119 332Z" fill="url(#scarf)"/>
+    <path d="M357 391 C393 395 421 417 430 450 C397 453 368 443 346 422Z" fill="#177BEA"/>
+    <path d="M167 392 C134 398 108 420 99 451 C132 453 160 444 180 424Z" fill="#2A92F6"/>
+    <path d="M245 381 C245 358 273 358 273 381 C273 404 245 410 245 381Z" fill="none" stroke="white" stroke-width="8"/>
+    <path d="M273 371 L288 360" stroke="#FFE45E" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="293" cy="355" r="6" fill="#FFE45E"/>
+    <path d="M183 476 C175 512 199 535 230 524 C242 519 248 505 245 492" fill="url(#body)" stroke="#F7C72C" stroke-width="5"/>
+    <path d="M337 476 C345 512 321 535 290 524 C278 519 272 505 275 492" fill="url(#body)" stroke="#F7C72C" stroke-width="5"/>
+    <path d="M133 129 C157 108 191 95 222 94" fill="none" stroke="white" stroke-width="10" stroke-linecap="round" opacity=".28"/>
+  </g>
+</svg>

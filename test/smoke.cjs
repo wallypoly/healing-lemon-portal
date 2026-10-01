@@ -42,7 +42,7 @@ test('Healing Lemon UI uses Ning-Mon and yellow/blue brand', () => {
   const css = read('public/assets/style.css');
   const app = read('public/app.html');
   assert(css.includes('--gold:#FFE45E') && css.includes('--brand:#2188F5'), 'brand colors missing');
-  assert(app.includes('ningmon-front.webp'), 'Ning-Mon not present in app hero');
+  assert(app.includes('ningmon.svg'), 'Ning-Mon not present in app hero');
 });
 test('no insecure default password shipped in UI', () => {
   const joined = ['public/login.html','public/assets/login.js','README.md'].map(read).join('\n');

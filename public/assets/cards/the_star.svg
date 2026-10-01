@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 660" width="440" height="660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c2a52"/><stop offset="1" stop-color="#3c4d8f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="58%">
+      <stop offset="0" stop-color="#dfe6ff" stop-opacity=".28"/><stop offset="1" stop-color="#dfe6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="440" height="660" fill="url(#bg)"/>
+  <rect width="440" height="660" fill="url(#glow)"/>
+  <rect x="14" y="14" width="412" height="632" fill="none" stroke="#dfe6ff" stroke-opacity=".55" stroke-width="2.5" rx="10"/>
+  <rect x="26" y="26" width="388" height="608" fill="none" stroke="#dfe6ff" stroke-opacity=".28" stroke-width="1.2" rx="6"/>
+  <path d="M220 120 l26 84 88 4 -70 54 26 86 -70 -52 -70 52 26 -86 -70 -54 88 -4 Z" fill="#dfe6ff" opacity=".95"/>
+         <circle cx="120" cy="200" r="6" fill="#dfe6ff" opacity=".7"/><circle cx="336" cy="176" r="8" fill="#dfe6ff" opacity=".65"/>
+         <circle cx="98" cy="330" r="5" fill="#dfe6ff" opacity=".6"/><circle cx="352" cy="322" r="6" fill="#dfe6ff" opacity=".6"/>
+         <path d="M110 520 q55 -34 110 0 t110 0" stroke="#dfe6ff" stroke-width="7" fill="none" opacity=".62" stroke-linecap="round"/>
+         <path d="M110 566 q55 -34 110 0 t110 0" stroke="#dfe6ff" stroke-width="7" fill="none" opacity=".42" stroke-linecap="round"/>
+  <text x="220" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="6" fill="#dfe6ff">XVII</text>
+  <text x="220" y="572" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="4" fill="#dfe6ff">星星</text>
+  <text x="220" y="608" text-anchor="middle" font-family="Georgia,serif" font-size="15" letter-spacing="5" fill="#dfe6ff" fill-opacity=".8">THE STAR</text>
+</svg>

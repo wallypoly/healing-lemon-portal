@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 660" width="440" height="660">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e8a33c"/><stop offset="1" stop-color="#c9712c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="58%">
+      <stop offset="0" stop-color="#fff4d6" stop-opacity=".28"/><stop offset="1" stop-color="#fff4d6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="440" height="660" fill="url(#bg)"/>
+  <rect width="440" height="660" fill="url(#glow)"/>
+  <rect x="14" y="14" width="412" height="632" fill="none" stroke="#fff4d6" stroke-opacity=".55" stroke-width="2.5" rx="10"/>
+  <rect x="26" y="26" width="388" height="608" fill="none" stroke="#fff4d6" stroke-opacity=".28" stroke-width="1.2" rx="6"/>
+  <circle cx="220" cy="250" r="96" fill="#fff4d6" opacity=".95"/>
+         <g stroke="#fff4d6" stroke-width="9" stroke-linecap="round" opacity=".85">
+           <path d="M220 96 v-32"/><path d="M220 436 v32"/><path d="M66 250 h-32"/><path d="M406 250 h32"/>
+           <path d="M112 142 l-23 -23"/><path d="M328 142 l23 -23"/><path d="M112 358 l-23 23"/><path d="M328 358 l23 23"/>
+         </g>
+         <circle cx="220" cy="250" r="62" fill="#c9712c" opacity=".55"/>
+         <path d="M120 540 q100 -70 200 0" stroke="#fff4d6" stroke-width="8" fill="none" opacity=".7" stroke-linecap="round"/>
+  <text x="220" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="6" fill="#fff4d6">XIX</text>
+  <text x="220" y="572" text-anchor="middle" font-family="Georgia,serif" font-size="30" letter-spacing="4" fill="#fff4d6">太阳</text>
+  <text x="220" y="608" text-anchor="middle" font-family="Georgia,serif" font-size="15" letter-spacing="5" fill="#fff4d6" fill-opacity=".8">THE SUN</text>
+</svg>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>我的旅程 · Healing Lemon 人生列车</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body class="student-ui">
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand-mark" href="/"><span class="brand-dot">🍋</span><span>人生列车 <span class="faint" style="font-weight:400">Life Train</span></span></a>
+    <div class="nav-links" id="tabs">
+      <a class="nav-link active" data-tab="journey" href="#journey">我的旅程</a>
+      <a class="nav-link" data-tab="stations" href="#stations">月台 / 报名</a>
+      <a class="nav-link" data-tab="registrations" href="#registrations">我的报名</a>
+      <a class="nav-link" data-tab="cards" href="#cards">抽牌记录</a>
+      <a class="nav-link" data-tab="badges" href="#badges">勋章</a>
+      <a class="nav-link" data-tab="profile" href="#profile">我的资料</a>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">登出</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap" style="padding-top:34px;padding-bottom:40px">
+
+  <!-- ===== 我的旅程 ===== -->
+  <section id="pane-journey">
+    <div class="hl-hero">
+      <div class="hl-sun"></div>
+      <div class="hl-platform-sign">人生列车<small>HEALING LEMON</small></div>
+      <div class="hl-hero-copy">
+        <div class="hl-kicker">🍋 HEALING LEMON · 人生列车</div>
+        <h1 id="hello">你好，欢迎回来。</h1>
+        <p>每一次出发，都把你带到更靠近自己的下一站。你的报名、抽牌、签到与成长记录，都收在同一段旅程里。</p>
+        <div class="hl-hand">下一站，更好的自己。</div>
+        <div class="hl-hero-actions">
+          <a class="btn btn-brand" href="#stations" data-tab-link="stations">报名下一站 →</a>
+          <a class="btn btn-ghost" href="#cards" data-tab-link="cards">看看我的抽牌记录</a>
+        </div>
+      </div>
+      <img class="hl-mascot" src="/assets/ip/ningmon.svg" alt="Ning-Mon 小宁檬" />
+    </div>
+
+    <div class="spacer"></div>
+    <div class="grid-3" id="journey-stats"></div>
+
+    <div class="spacer"></div>
+    <div class="grid-2" style="align-items:start">
+      <!-- 站票 punch card -->
+      <div class="card card-lg">
+        <div class="row-between">
+          <div>
+            <div class="eyebrow">PUNCH CARD · 站票</div>
+            <h2 style="font-size:22px;margin-top:8px">你的站票</h2>
+          </div>
+          <div class="pill pill-gold" id="punch-pill">0 / 6</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="punch-grid" id="punch-grid"></div>
+        <div class="spacer"></div>
+        <div>
+          <div class="row-between tiny faint" style="letter-spacing:.12em">
+            <span id="next-badge-label">距离下一枚勋章</span>
+            <span id="next-badge-count"></span>
+          </div>
+          <div class="progress-track" style="margin-top:9px"><div class="progress-fill" id="badge-progress" style="width:0%"></div></div>
+        </div>
+        <div class="banner ok" style="margin-top:20px" id="punch-note">
+          ✦ 工作人员现场点名签到后，系统会自动打上 punch。
+        </div>
+      </div>
+
+      <!-- route map -->
+      <div class="card card-lg">
+        <div class="eyebrow">THE ROUTE · 路线图</div>
+        <h2 style="font-size:22px;margin-top:8px">人生列车路线</h2>
+        <div class="spacer"></div>
+        <div class="route" id="route-map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 月台 / 报名 ===== -->
+  <section id="pane-stations" class="hidden">
+    <div class="eyebrow">STATIONS · 月台</div>
+    <h1 style="font-size:clamp(27px,4vw,40px);margin-top:8px">选择你的下一站。</h1>
+    <p class="muted">资料只填一次。选好月台、付款、抽牌 —— 三步就好。</p>
+    <div class="spacer"></div>
+    <div class="stack-lg" id="station-list"></div>
+  </section>
+
+  <!-- ===== 我的报名 ===== -->
+  <section id="pane-registrations" class="hidden">
+    <div class="eyebrow">MY REGISTRATIONS · 我的报名</div>
+    <h1 style="font-size:clamp(27px,4vw,40px);margin-top:8px">报名与付款记录。</h1>
+    <div class="spacer"></div>
+    <div class="stack" id="registration-list"></div>
+  </section>
+
+  <!-- ===== 抽牌记录 ===== -->
+  <section id="pane-cards" class="hidden">
+    <div class="eyebrow violet">CARD ARCHIVE · 抽牌记录</div>
+    <h1 style="font-size:clamp(27px,4vw,40px);margin-top:8px">你收下的每一张指引。</h1>
+    <p class="muted">每一站的牌都留在这里。以后当你再次遇到相似的状态，也许你会更快听见自己的声音。</p>
+    <div class="spacer"></div>
+    <div class="grid-2" id="card-archive"></div>
+  </section>
+
+  <!-- ===== 勋章 ===== -->
+  <section id="pane-badges" class="hidden">
+    <div class="eyebrow">BADGES · 勋章</div>
+    <h1 style="font-size:clamp(27px,4vw,40px);margin-top:8px">走到哪里，就把哪里点亮。</h1>
+    <div class="spacer"></div>
+    <div class="grid-4" id="badge-list"></div>
+  </section>
+
+  <!-- ===== 我的资料 ===== -->
+  <section id="pane-profile" class="hidden">
+    <div class="eyebrow">PROFILE · 我的资料</div>
+    <h1 style="font-size:clamp(27px,4vw,40px);margin-top:8px">你的档案。</h1>
+    <p class="muted">这些资料只填一次，之后每个月自动带入。</p>
+    <div class="spacer"></div>
+    <div class="grid-2" style="align-items:start">
+      <form class="card card-lg stack" id="profile-form">
+        <h2 style="font-size:20px">基本资料</h2>
+        <div class="field"><label class="label">姓名 / Name</label><input class="input" name="name" required /></div>
+        <div class="grid-2">
+          <div class="field"><label class="label">WhatsApp 电话</label><input class="input" name="phone" /></div>
+          <div class="field"><label class="label">电子邮箱</label><input class="input" name="email" disabled /></div>
+        </div>
+        <div class="field"><label class="label">紧急联络人</label><input class="input" name="emergencyContact" /></div>
+        <div class="field">
+          <label class="label">语言需求</label>
+          <select class="select" name="languagePref">
+            <option>中文 / Chinese</option><option>英文 / English</option><option>中英双语 / Bilingual</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label">想获得哪方面的清晰度？</label>
+          <select class="select" name="clarity">
+            <option value="">— 未选择 —</option>
+            <option>金钱与事业 / Money &amp; Career</option>
+            <option>爱情与人际关系 / Love &amp; Relationships</option>
+            <option>个人成长与自我觉察 / Personal Growth</option>
+            <option>纯粹对塔罗超有兴趣 / Curious about tarot</option>
+          </select>
+        </div>
+        <div class="field"><label class="label">参与的原因 / Why</label><textarea class="textarea" name="introReason" placeholder="是什么让你想来参加？"></textarea></div>
+        <div class="field"><label class="label">期待 / Hopes</label><textarea class="textarea" name="introHopes" placeholder="心情或期待 / Your feelings or hopes…"></textarea></div>
+        <label class="choice"><input type="checkbox" name="consentWhatsapp" /><span>同意加入活动专属 WhatsApp 群组</span></label>
+        <button class="btn btn-primary" type="submit">保存资料</button>
+      </form>
+
+      <div class="stack">
+        <form class="card card-lg stack" id="password-form">
+          <h2 style="font-size:20px">修改密码</h2>
+          <div class="field"><label class="label">当前密码</label><input class="input" type="password" name="currentPassword" /></div>
+          <div class="field"><label class="label">新密码（至少 8 位）</label><input class="input" type="password" name="newPassword" minlength="8" /></div>
+          <button class="btn btn-ghost" type="submit">更新密码</button>
+        </form>
+
+        <div class="card">
+          <div class="eyebrow">HELP · 需要帮忙</div>
+          <div class="spacer-sm"></div>
+          <div class="kv" id="contact-kv"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== 报名流程 Modal ===== -->
+<div class="modal-back hidden" id="reg-modal">
+  <div class="modal">
+    <div class="row-between">
+      <div class="steps" id="reg-steps">
+        <div class="step-dot on">1</div><div class="step-line"></div>
+        <div class="step-dot">2</div><div class="step-line"></div>
+        <div class="step-dot">3</div><div class="step-line"></div>
+        <div class="step-dot">4</div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="closeRegModal()">✕ 关闭</button>
+    </div>
+    <div class="spacer"></div>
+    <div id="reg-body"></div>
+    <div class="spacer"></div>
+    <div class="row-between">
+      <button class="btn btn-ghost" id="reg-back" onclick="regPrev()">← 上一步</button>
+      <button class="btn btn-brand" id="reg-next" onclick="regNext()">下一步 →</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="/assets/firebase-config.js"></script>
+<script src="/assets/core.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>

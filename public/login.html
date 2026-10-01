@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>登录 / 上车 · Healing Lemon 人生列车</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+
+<div class="auth-split">
+  <!-- 左侧视觉 -->
+  <aside class="auth-visual">
+    <a class="brand-mark" href="/" style="color:#fff">
+      <span class="brand-dot" style="background:rgba(255,255,255,.18)">🍋</span>
+      <span>小宁檬 <span style="opacity:.7;font-weight:400">Healing Lemon</span></span>
+    </a>
+
+    <div>
+      <div class="eyebrow" style="color:rgba(255,255,255,.75)">人生列车 · THE LIFE TRAIN</div>
+      <h1 style="font-size:clamp(28px,4.2vw,46px);color:#fff;margin-top:14px">
+        你的每一次<br />到场，都算数。
+      </h1>
+      <p style="color:rgba(255,255,255,.82);max-width:38ch;margin-top:18px">
+        资料只填一次。以后每一站，一键报名、一键付款、一次抽牌。<br />
+        每一次到站都会留下 punch，并在 3 / 6 / 12 站点亮成长印章。
+      </p>
+      <div class="spacer"></div>
+      <div class="row" style="gap:9px">
+        <span class="pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff">🎟️ 站票 punch</span>
+        <span class="pill" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);color:#fff">🏅 3 / 6 / 12 成长印章</span>
+      </div>
+    </div>
+
+    <div class="tiny" style="opacity:.72">
+      Wallance 012-347 9798 · Eunice 016-936 1314<br />
+      Mutual Healing, Bandar Sri Damansara
+    </div>
+  </aside>
+
+  <!-- 右侧表单 -->
+  <main class="auth-form">
+    <div style="width:min(430px,100%);margin:0 auto">
+      <div class="steps" style="margin-bottom:22px">
+        <button class="step-dot on" id="tab-login" onclick="switchMode('login')" title="登录">1</button>
+        <div class="step-line"></div>
+        <button class="step-dot" id="tab-join" onclick="switchMode('join')" title="上车 / 注册">2</button>
+        <div class="step-line"></div>
+        <button class="step-dot" id="tab-staff" onclick="switchMode('staff')" title="工作人员">3</button>
+      </div>
+
+      <!-- ===== 登录 ===== -->
+      <section id="pane-login">
+        <div class="eyebrow">WELCOME BACK</div>
+        <h2 style="font-size:29px;margin-top:9px">欢迎回到车上。</h2>
+        <p class="muted small">用你的邮箱登录，继续你的旅程。</p>
+        <div class="spacer"></div>
+        <form id="login-form" class="stack">
+          <div class="field">
+            <label class="label">电子邮箱 / Email</label>
+            <input class="input" type="email" name="email" required placeholder="name@example.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label class="label">密码 / Password</label>
+            <input class="input" type="password" name="password" required placeholder="••••••••" autocomplete="current-password" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">登录 / Sign In</button>
+          <div class="center small muted">
+            第一次来？
+            <a href="#" onclick="switchMode('join');return false" style="color:var(--brand);font-weight:700">点这里上车 →</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===== 注册 / 上车 ===== -->
+      <section id="pane-join" class="hidden">
+        <div class="eyebrow">FIRST DEPARTURE</div>
+        <h2 style="font-size:29px;margin-top:9px">第一次上车。</h2>
+        <p class="muted small">建立你的档案。填一次，以后每个月自动带入，不用重复填表。</p>
+        <div class="spacer"></div>
+        <form id="join-form" class="stack">
+          <div class="field">
+            <label class="label">姓名 / Full Name <span class="req">*</span></label>
+            <input class="input" name="name" required placeholder="例如 Candy Lee / 李晓华" />
+            <div class="hint">请填写真实姓名，与 IC / 护照一致</div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label class="label">WhatsApp 电话 <span class="req">*</span></label>
+              <input class="input" name="phone" required placeholder="012-345 6789" />
+            </div>
+            <div class="field">
+              <label class="label">电子邮箱 <span class="req">*</span></label>
+              <input class="input" type="email" name="email" required placeholder="name@example.com" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">设置密码 / Password <span class="req">*</span></label>
+            <input class="input" type="password" name="password" required minlength="8" placeholder="至少 8 位" autocomplete="new-password" />
+          </div>
+          <div class="field">
+            <label class="label">紧急联络人（选填 / Optional）</label>
+            <input class="input" name="emergencyContact" placeholder="家人或朋友 / Family or friend: Alex 016-1234567" />
+          </div>
+
+          <div class="field">
+            <label class="label">想通过工作坊获得哪方面的清晰度？ / Clarity on…</label>
+            <div class="stack" style="gap:9px" id="clarity-choices">
+              <label class="choice"><input type="radio" name="clarity" value="金钱与事业 / Money & Career" /><span>💼 金钱与事业 <span class="en">/ Money & Career</span></span></label>
+              <label class="choice"><input type="radio" name="clarity" value="爱情与人际关系 / Love & Relationships" /><span>❤️ 爱情与人际关系 <span class="en">/ Love & Relationships</span></span></label>
+              <label class="choice"><input type="radio" name="clarity" value="个人成长与自我觉察 / Personal Growth" /><span>🌱 个人成长与自我觉察 <span class="en">/ Personal Growth</span></span></label>
+              <label class="choice"><input type="radio" name="clarity" value="纯粹对塔罗超有兴趣 / Curious about tarot" /><span>🔮 纯粹对塔罗超有兴趣 derh～ 😍 <span class="en">/ Simply curious about tarot</span></span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">是否接触过冥想或塔罗牌？ / Experience</label>
+            <div class="stack" style="gap:9px">
+              <label class="choice"><input type="radio" name="experience" value="没有，这是我第一次尝试（非常欢迎！）" checked /><span>🌿 零基础小白 <span class="en">/ Complete beginner</span><br /><span class="hint">第一次尝试，超欢迎！</span></span></label>
+              <label class="choice"><input type="radio" name="experience" value="有过相关体验，想进一步沉淀与连结" /><span>🌙 有过相关体验 <span class="en">/ Some experience</span><br /><span class="hint">想进一步沉淀与连结</span></span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">目前的心情、卡点或特别期待 / How you feel</label>
+            <textarea class="textarea" name="introHopes" placeholder="心情或期待 / Your feelings or hopes for the workshop…"></textarea>
+            <div class="hint">不管你现在带着什么样的疲惫、困惑或好奇，现场都为你保留一个绝对安全、不带评判的倾听空间。</div>
+          </div>
+
+          <div class="field">
+            <label class="label">现场与资料语言需求 / Language Preference</label>
+            <select class="select" name="languagePref">
+              <option>中文 / Chinese</option>
+              <option>英文 / English</option>
+              <option>中英双语 / Bilingual</option>
+            </select>
+          </div>
+
+          <label class="choice">
+            <input type="checkbox" name="consentWhatsapp" checked />
+            <span>✓ 同意加入活动专属 WhatsApp 群组 <span class="en">/ I agree to join the workshop WhatsApp group</span></span>
+          </label>
+
+          <button class="btn btn-brand btn-block" type="submit">建立档案 · 开始旅程 →</button>
+          <div class="center small muted">
+            已经有档案了？
+            <a href="#" onclick="switchMode('login');return false" style="color:var(--brand);font-weight:700">直接登录 →</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===== 工作人员 ===== -->
+      <section id="pane-staff" class="hidden">
+        <div class="eyebrow violet">STAFF ACCESS</div>
+        <h2 style="font-size:29px;margin-top:9px">工作人员入口。</h2>
+        <p class="muted small">点名签到、核对付款、管理月台与同学资料。</p>
+        <div class="spacer"></div>
+        <form id="staff-form" class="stack">
+          <div class="field">
+            <label class="label">工作邮箱 / Staff Email</label>
+            <input class="input" type="email" name="email" required placeholder="admin@healinglemon.my" />
+          </div>
+          <div class="field">
+            <label class="label">密码 / Password</label>
+            <input class="input" type="password" name="password" required placeholder="••••••••" />
+          </div>
+          <button class="btn btn-primary btn-block" type="submit">进入后台 / Enter</button>
+          <div class="banner info tiny">工作人员账号由 Admin 在后台建立。权限由 Firebase Auth + custom claims 控制。</div>
+        </form>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
+<script src="/assets/firebase-config.js"></script>
+<script src="/assets/core.js"></script>
+<script src="/assets/login.js"></script>
+</body>
+</html>

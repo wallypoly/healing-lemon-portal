@@ -42,12 +42,12 @@ async function ensureAccount(prefix, role) {
 (async () => {
   await upsert('settings/public', {
     payment_reference_word: 'healing lemon',
-    bank_name: 'YOUR_BANK_NAME',
-    bank_account_name: 'YOUR_ACCOUNT_NAME',
-    bank_account_number: 'YOUR_ACCOUNT_NUMBER',
+    bank_name: 'CIMB Bank',
+    bank_account_name: 'Eunice Tee Yi Shyan',
+    bank_account_number: '7059523144',
     qr_image: '/assets/payment/duitnow-qr.svg',
-    contact_wallance: 'YOUR_PRIMARY_CONTACT',
-    contact_eunice: 'YOUR_SECONDARY_CONTACT',
+    contact_wallance: 'Wallance 012-347 9798',
+    contact_eunice: 'Eunice 016-936 1314',
     brand_name: 'Healing Lemon · 人生列车',
     currency: 'MYR',
     workshop_name: '塔罗与冥想工作坊 · 人生列车',
