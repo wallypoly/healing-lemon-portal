@@ -22,7 +22,6 @@ jobs:
           cat .sync3/part-* | base64 -d > /tmp/healing-lemon-portal.tgz
           tar -xzf /tmp/healing-lemon-portal.tgz -C .
           rm -rf .sync3 .sync2 .sync-payload
-          rm -f .github/workflows/materialize-portal.yml
       - name: Verify portal
         shell: bash
         run: |
@@ -34,5 +33,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
           git commit -m "feat: publish Healing Lemon Portal v2"
           git push
