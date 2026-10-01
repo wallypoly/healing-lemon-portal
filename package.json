@@ -1,0 +1,19 @@
+{
+  "name": "healing-lemon-life-train-portal",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Healing Lemon 人生列车 Portal · Firebase merged production architecture",
+  "scripts": {
+    "serve": "firebase emulators:start",
+    "deploy": "firebase deploy",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "seed": "node scripts/seed.cjs",
+    "check": "node --check functions/index.js && node --check public/assets/core.js && node --check public/assets/app.js && node --check public/assets/admin.js && node --check public/assets/login.js",
+    "test": "node test/smoke.cjs"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.0.0",
+    "firebase-admin": "^13.4.0"
+  }
+}

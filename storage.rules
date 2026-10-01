@@ -1,0 +1,21 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function role() { return signedIn() ? request.auth.token.role : null; }
+    function staff() { return role() == 'staff' || role() == 'admin'; }
+
+    match /receipts/{uid}/{registrationId}/{fileName} {
+      allow create, update: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType.matches('(image/jpeg|image/png|image/webp|application/pdf)');
+      allow read: if signedIn() && (request.auth.uid == uid || staff());
+      allow delete: if signedIn() && (request.auth.uid == uid || staff());
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

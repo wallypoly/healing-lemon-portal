@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" role="img" aria-label="Healing Lemon 人生列车">
+  <g transform="translate(4 7)">
+    <path d="M24 7c11-9 27-6 35 4 9 12 7 30-5 40-11 9-29 8-39-2C5 39 5 21 15 12c3-3 6-4 9-5Z" fill="#FFE45E" stroke="#2188F5" stroke-width="4"/>
+    <path d="M38 7c5-7 12-9 20-7-2 8-8 13-17 15" fill="#A7D18C" stroke="#2188F5" stroke-width="3" stroke-linecap="round"/>
+    <path d="M15 54c-5 3-10 2-13-1M60 16c4-3 8-3 12-1" fill="none" stroke="#2188F5" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+  <text x="86" y="31" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#1668B8">Healing Lemon</text>
+  <text x="88" y="54" font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="4" fill="#164E86">人生列车</text>
+</svg>
